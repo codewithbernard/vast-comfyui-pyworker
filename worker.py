@@ -296,9 +296,11 @@ worker_config = WorkerConfig(
         HandlerConfig(
             route="/generate/sync",
             allow_parallel_requests=False,
-            max_queue_time=10.0,
+            max_queue_time=1.0,
             benchmark_config=BenchmarkConfig(
                 generator=make_benchmark_payload,
+                runs=3,
+                concurrency=1,
             )
         )
     ],
