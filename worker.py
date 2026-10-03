@@ -300,9 +300,9 @@ worker_config = WorkerConfig(
             max_queue_time=30.0,
             benchmark_config=BenchmarkConfig(
                 generator=make_benchmark_payload,
-                runs=3,
-                concurrency=1,
-            )
+                runs=1,
+            ),
+            workload_calculator= lambda _ : 30000.0
         )
     ],
     log_action_config=LogActionConfig(
